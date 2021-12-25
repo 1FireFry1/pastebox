@@ -1,3 +1,7 @@
 app:
   host: http://pastebox.sendel.ru
-  public_list_size: 10
+#  Используем значение для размера листа вывода ссылок по заданию 10
+#  public_list_size: 10
+#  Создали переменную LIST_SIZE в (параметры запуска) Edit Configuration -> Environment variables
+#  и в неё записываются значения из окружения.
+  public_list_size: ${LIST_SIZE}

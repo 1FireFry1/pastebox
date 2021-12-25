@@ -1,6 +1,7 @@
 package ru.sender.pastebox.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 import ru.sender.pastebox.api.request.PasteboxRequest;
@@ -17,11 +18,12 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@Setter
 @ConfigurationProperties(prefix = "app")
 public class PasteboxServiceImpl implements PasteboxService{
 
-    private String host = "http://abc.ru";
-    private int publicListSize = 10;
+    private String host;
+    private int publicListSize;
 
     private final PasteboxRepository repository;
     private AtomicInteger idGenerator = new AtomicInteger(0);
