@@ -1,7 +1,15 @@
 app:
-  host: http://pastebox.sendel.ru
+#  Первый вариант хоста
+#  host: http://pastebox.sendel.ru
+
+
+#  Переменная создаётся с помощью символа $ и фигурными скобками {} за ним ${SOME_VARIABLE}
+#  Создали переменную хоста чтобы можно было извне задавать.
+#  Через : задаётся значение поумолчанию
+  host: ${HOST:localhost}
+
 #  Используем значение для размера листа вывода ссылок по заданию 10
 #  public_list_size: 10
 #  Создали переменную LIST_SIZE в (параметры запуска) Edit Configuration -> Environment variables
 #  и в неё записываются значения из окружения.
-  public_list_size: ${LIST_SIZE}
+  public_list_size: ${LIST_SIZE:10}
